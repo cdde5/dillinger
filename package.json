@@ -22,7 +22,7 @@
     "test": "gulp test",
     "preversion": "gulp build --prod",
     "postversion": "bin/build.js",
-    "build": "gulp build --prod --require esm",
+    "build": "gulp build",
     "deploy": "ssh azure",
     "preinstall": "npm install --package-lock-only --ignore-scripts && npx npm-force-resolutions"
   },
@@ -66,6 +66,7 @@
     "ejs": "^3.1.9",
     "errorhandler": "^1.5.1",
     "es6-promise": "^4.2.8",
+    "esm": "^3.2.25",
     "express": "^4.18.2",
     "googleapis": "^118.0.0",
     "graceful-fs": "^4.2.11",
