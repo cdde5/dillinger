@@ -1,20 +1,26 @@
+const gulp = require('gulp');
 
-'use strict'
+// 使用动态导入替代 require
+let critical;
+import('critical').then(module => {
+    critical = module.default;
+});
 
-const critical = require('critical')
+gulp.task('critical', function (done) {
+    // 确保 critical 已经加载
+    if (!critical) {
+        console.error('Critical module not loaded yet');
+        done();
+        return;
+    }
 
-const gulp = require('gulp')
-
-gulp.task('critical', function () {
-  const dest = './public'
-
-  return critical.generateInline({
-    base: dest,
-    src: 'index.html',
-    styleTarget: 'app.css',
-    htmlTarget: 'index.html',
-    width: 320,
-    height: 480,
-    minify: true
-  })
-})
+    return gulp.src('public/*.html')
+        .pipe(
+            critical.stream({
+                base: 'public/',
+                inline: true,
+                css: ['public/css/style.min.css']
+            })
+        )
+        .pipe(gulp.dest('public'));
+});
