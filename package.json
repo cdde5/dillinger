@@ -96,7 +96,6 @@
     "medium-sdk": "0.0.4",
     "method-override": "^3.0.0",
     "morgan": "^1.10.0",
-    "netjet": "^1.6.0",
     "parse-link-header": "^2.0.0",
     "rc": "^1.2.8",
     "reading-time": "^1.5.0",
