@@ -1,6 +1,6 @@
 
 'use strict'
-
+console.log('Starting Gulp build task');
 const gulp = require('gulp')
 
 const sequence = require('run-sequence')
@@ -16,3 +16,8 @@ if (global.isProduction) {
 } else {
   gulp.task('build', devTasks)
 }
+
+
+
+// 你的任务代码
+console.log('Gulp build task completed');
