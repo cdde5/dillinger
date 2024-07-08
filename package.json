@@ -44,7 +44,7 @@
     "url": "git://github.com/joemccann/dillinger"
   },
   "engines": {
-    "node": ">=16.x",
+    "node": "20.x",
     "npm": ">=8.x"
   },
   "dependencies": {
